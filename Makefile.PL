@@ -1,3 +1,4 @@
+use 5.006002;
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
@@ -49,6 +50,7 @@ WriteMakefile
      PREREQ_PM => {
                    'Data::Dumper' => 0,
                    'Test::More' => 0,
+                   version => "0.72", # because I decided in favor of 0.0.x numbering
                   },
      dist => {
               DIST_DEFAULT => join(" ", # note: order matters!

@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Acme-Study-Perl
-version:            0.0.1
+version:            0.0.2
 abstract:           empirical studies about how perl behaves
 author:
     - Andreas König <andreas.koenig.7os6VVqR@franz.ak.mind.de>
@@ -11,6 +11,7 @@ configure_requires:
 requires:
     Data::Dumper:  0
     Test::More:    0
+    version:       0.72
 no_index:
     directory:
         - t

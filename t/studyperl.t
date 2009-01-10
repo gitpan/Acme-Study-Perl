@@ -11,8 +11,20 @@ SKIP: {
 }
 
 diag("\n");
-studyperl(q{'123456789123456789.2' <=> '123456789123456790'}, "native big math float/int");
-studyperl(q{'123456789123456789.2' <=> '123456789123456790.0'}, "native big math float/float");
-studyperl(q{'123456789123456789' <=> '123456789123456790'}, "native big math int/int");
-studyperl(q{'123456789123456789123456789123456789' <=> '123456789123456789123456789123456790'}, "native big math int/int larger");
+my @tests =
+    (
+     [q{'123456789123456789.2' <=> '123456789123456790'},
+      "native big math float/int"],
+     [q{'123456789123456789.2' <=> '123456789123456790.0'},
+      "native big math float/float"],
+     [q{'123456789123456789' <=> '123456789123456790'},
+      "native big math int/int 18"],
+     [q{'123456789123456789123456789123456789' <=> '123456789123456789123456789123456790'},
+      "native big math int/int 36"],
+     [q{sqrt(-1e-309)},
+      "negative square root"],
+    );
+for my $t (@tests) {
+    studyperl(@$t);
+}
 
